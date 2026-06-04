@@ -1,0 +1,15 @@
+﻿namespace MathLib;
+
+public class Calculator
+{
+    public int Sum(int a, int b) => a + b;
+    public static int Factorial(int n)
+    {
+        int result = 1;
+
+        for (int i = 0; i <= n; ++i)
+            result *= i;
+
+        return result;
+    }
+}

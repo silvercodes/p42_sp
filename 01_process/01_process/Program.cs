@@ -35,23 +35,44 @@ using System.Diagnostics;
 //}
 
 
+//try
+//{
+//    Process p = GetProcessFromUser();
+//    ProcessThreadCollection threads = p.Threads;
+//    foreach (ProcessThread t in threads)
+//    {
+//        Console.WriteLine($"{t.Id}\t{t.StartTime.ToShortTimeString()}\t{t.PriorityLevel}\t{p.VirtualMemorySize64}");
+//    }
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine($"ERROR: {ex.Message}");
+//}
+
+
+
+
+// Process.Start("notepad");
+// Process.Start(@"C:\Program Files\Google\Chrome\Application\chrome.exe", "https://wikipedia.org --incognito");
+// Process.Start(@"C:\Users\ThinkPad\Desktop\01_test.exe");
+
+
+
+
 try
 {
     Process p = GetProcessFromUser();
-    ProcessThreadCollection threads = p.Threads;
-    foreach(ProcessThread t in threads)
-    {
-        Console.WriteLine($"{t.Id}\t{t.StartTime.ToShortTimeString()}\t{t.PriorityLevel}\t{p.VirtualMemorySize64}");
-    }
+
+    ProcessModuleCollection modules = p.Modules;
+
+    foreach (ProcessModule m in modules)
+        Console.WriteLine($"{m.ModuleName}\t{m.ModuleMemorySize}");
+    
 }
 catch (Exception ex)
 {
     Console.WriteLine($"ERROR: {ex.Message}");
 }
-
-
-
-
 
 
 
