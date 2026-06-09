@@ -8,10 +8,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="MathLib">
-      <HintPath>..\..\..\..\..\Users\ThinkPad\Desktop\MathLib.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
